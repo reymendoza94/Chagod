@@ -58,7 +58,7 @@ const authors = [
         name:'George R',
         last_name:'R. Martin',
         extract: '',
-        bithday: '',
+        birthday: '',
         photo: ''
     },
 
@@ -67,7 +67,7 @@ const authors = [
         name:'J. K.',
         last_name:'Rowling',
         extract: '',
-        bithday: '',
+        birthday: '',
         photo: ''
     }
 ]
@@ -78,7 +78,7 @@ const typeDefs = gql`
         name: String!
         last_name: String!
         extract: String!
-        bithday: String!
+        birthday: String!
         photo: String
     }
 
@@ -92,8 +92,13 @@ const typeDefs = gql`
             name: String!
             last_name: String!
             extract: String!
-            bithday: String!
+            birthday: String!
             photo: String
+        ): Author
+
+        editAuthor(
+            id: ID!
+            name: String!
         ): Author
     }
 `
@@ -106,7 +111,7 @@ const resolvers = {
     Mutation: {
         addAuthor: (root, args) => {
             const author = { ...args, id: uuid()}
-            author = authors.push(author)
+            authors.push(author)
             return author
         }
     },
