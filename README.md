@@ -12,6 +12,6 @@
     ```
 2. Install apollo-server and graphql
     ```shell
-    npm install apollo-server graphql
+    npm install @apollo-server graphql
     ```
     
